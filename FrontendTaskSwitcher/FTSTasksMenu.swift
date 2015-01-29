@@ -24,7 +24,7 @@ class FTSTasksMenu: NSMenu {
         self.statusItem.menu = self
     }
 
-    func getDirectoryURL() -> NSURL! {
+    private func getDirectoryURL() -> NSURL! {
         // show file open dialog
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
@@ -34,11 +34,25 @@ class FTSTasksMenu: NSMenu {
         let result = panel.runModal()
         return (result == NSOKButton) ? panel.directoryURL : nil;
     }
+
+    private func getTaskConfigFilePathAndType(directory: NSURL) -> (String!, String!) {
+        let manager = NSFileManager.defaultManager()
+        if ( directory.path != nil && directory.path?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 ) {
+            let path = directory.path!+"/Gruntfile.js"
+            if manager.fileExistsAtPath(path) {
+                return (path, "grunt")
+            }
+        }
+        return (nil, nil)
+    }
     
     @IBAction func addProject(sender: AnyObject) {
         let directoryURL = self.getDirectoryURL()
         if ( directoryURL != nil ) {
-            println(directoryURL)
+            let (path, type) = self.getTaskConfigFilePathAndType(directoryURL)
+            if ( path != nil ) {
+                println(path, type)
+            }
         }
     }
     
