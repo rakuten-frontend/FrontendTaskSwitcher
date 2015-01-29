@@ -13,15 +13,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
+    @IBOutlet weak var taskMenu: NSMenu!
+    var statusItem : NSStatusItem!
 
+    private func setupMenu() {
+        let systemStatusBar = NSStatusBar.systemStatusBar()
+        //self.statusItem = systemStatusBar.statusItemWithLength(NSVariableStatusItemLength)
+        self.statusItem = systemStatusBar.statusItemWithLength(-1)
+        self.statusItem.highlightMode = true
+        self.statusItem.title = "Tasks"
+        self.statusItem.menu = self.taskMenu
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        // setup menu
+        self.setupMenu()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
 
-
 }
-
