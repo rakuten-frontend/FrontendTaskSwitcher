@@ -23,4 +23,9 @@ class FTSTasksMenu: NSMenu {
         self.statusItem.title = "Tasks"
         self.statusItem.menu = self
     }
+
+    @IBAction func addProject(sender: AnyObject) {
+        // show file open dialog
+    }
+    
 }
