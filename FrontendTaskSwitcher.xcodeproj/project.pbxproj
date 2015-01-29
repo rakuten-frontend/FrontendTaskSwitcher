@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
+		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
+		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
+		EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EED1379E1A79FB6D000864CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EED137851A79FB6D000864CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EED1378C1A79FB6D000864CE;
+			remoteInfo = FrontendTaskSwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED137921A79FB6D000864CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EED137941A79FB6D000864CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EED137971A79FB6D000864CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EED1379D1A79FB6D000864CE /* FrontendTaskSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontendTaskSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED137A21A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendTaskSwitcherTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EED1378A1A79FB6D000864CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED1379A1A79FB6D000864CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EED137841A79FB6D000864CE = {
+			isa = PBXGroup;
+			children = (
+				EED1378F1A79FB6D000864CE /* FrontendTaskSwitcher */,
+				EED137A01A79FB6D000864CE /* FrontendTaskSwitcherTests */,
+				EED1378E1A79FB6D000864CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EED1378E1A79FB6D000864CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */,
+				EED1379D1A79FB6D000864CE /* FrontendTaskSwitcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EED1378F1A79FB6D000864CE /* FrontendTaskSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				EED137921A79FB6D000864CE /* AppDelegate.swift */,
+				EED137941A79FB6D000864CE /* Images.xcassets */,
+				EED137961A79FB6D000864CE /* MainMenu.xib */,
+				EED137901A79FB6D000864CE /* Supporting Files */,
+			);
+			path = FrontendTaskSwitcher;
+			sourceTree = "<group>";
+		};
+		EED137901A79FB6D000864CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED137911A79FB6D000864CE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EED137A01A79FB6D000864CE /* FrontendTaskSwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */,
+				EED137A11A79FB6D000864CE /* Supporting Files */,
+			);
+			path = FrontendTaskSwitcherTests;
+			sourceTree = "<group>";
+		};
+		EED137A11A79FB6D000864CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED137A21A79FB6D000864CE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EED1378C1A79FB6D000864CE /* FrontendTaskSwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED137A71A79FB6D000864CE /* Build configuration list for PBXNativeTarget "FrontendTaskSwitcher" */;
+			buildPhases = (
+				EED137891A79FB6D000864CE /* Sources */,
+				EED1378A1A79FB6D000864CE /* Frameworks */,
+				EED1378B1A79FB6D000864CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FrontendTaskSwitcher;
+			productName = FrontendTaskSwitcher;
+			productReference = EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EED1379C1A79FB6D000864CE /* FrontendTaskSwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED137AA1A79FB6D000864CE /* Build configuration list for PBXNativeTarget "FrontendTaskSwitcherTests" */;
+			buildPhases = (
+				EED137991A79FB6D000864CE /* Sources */,
+				EED1379A1A79FB6D000864CE /* Frameworks */,
+				EED1379B1A79FB6D000864CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EED1379F1A79FB6D000864CE /* PBXTargetDependency */,
+			);
+			name = FrontendTaskSwitcherTests;
+			productName = FrontendTaskSwitcherTests;
+			productReference = EED1379D1A79FB6D000864CE /* FrontendTaskSwitcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EED137851A79FB6D000864CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Rakuten Front-end";
+				TargetAttributes = {
+					EED1378C1A79FB6D000864CE = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					EED1379C1A79FB6D000864CE = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EED1378C1A79FB6D000864CE;
+					};
+				};
+			};
+			buildConfigurationList = EED137881A79FB6D000864CE /* Build configuration list for PBXProject "FrontendTaskSwitcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EED137841A79FB6D000864CE;
+			productRefGroup = EED1378E1A79FB6D000864CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EED1378C1A79FB6D000864CE /* FrontendTaskSwitcher */,
+				EED1379C1A79FB6D000864CE /* FrontendTaskSwitcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EED1378B1A79FB6D000864CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED137951A79FB6D000864CE /* Images.xcassets in Resources */,
+				EED137981A79FB6D000864CE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED1379B1A79FB6D000864CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EED137891A79FB6D000864CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED137991A79FB6D000864CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EED1379F1A79FB6D000864CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EED1378C1A79FB6D000864CE /* FrontendTaskSwitcher */;
+			targetProxy = EED1379E1A79FB6D000864CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EED137961A79FB6D000864CE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED137971A79FB6D000864CE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EED137A51A79FB6D000864CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EED137A61A79FB6D000864CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EED137A81A79FB6D000864CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FrontendTaskSwitcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EED137A91A79FB6D000864CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FrontendTaskSwitcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EED137AB1A79FB6D000864CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FrontendTaskSwitcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrontendTaskSwitcher.app/Contents/MacOS/FrontendTaskSwitcher";
+			};
+			name = Debug;
+		};
+		EED137AC1A79FB6D000864CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FrontendTaskSwitcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrontendTaskSwitcher.app/Contents/MacOS/FrontendTaskSwitcher";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EED137881A79FB6D000864CE /* Build configuration list for PBXProject "FrontendTaskSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED137A51A79FB6D000864CE /* Debug */,
+				EED137A61A79FB6D000864CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EED137A71A79FB6D000864CE /* Build configuration list for PBXNativeTarget "FrontendTaskSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED137A81A79FB6D000864CE /* Debug */,
+				EED137A91A79FB6D000864CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EED137AA1A79FB6D000864CE /* Build configuration list for PBXNativeTarget "FrontendTaskSwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED137AB1A79FB6D000864CE /* Debug */,
+				EED137AC1A79FB6D000864CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EED137851A79FB6D000864CE /* Project object */;
+}
