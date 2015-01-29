@@ -11,6 +11,7 @@
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
 		EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */; };
+		EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		EED1379D1A79FB6D000864CE /* FrontendTaskSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontendTaskSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137A21A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendTaskSwitcherTests.swift; sourceTree = "<group>"; };
+		EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTasksMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				EED137921A79FB6D000864CE /* AppDelegate.swift */,
+				EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
+				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,7 @@
 				EED137A91A79FB6D000864CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EED137AA1A79FB6D000864CE /* Build configuration list for PBXNativeTarget "FrontendTaskSwitcherTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +406,7 @@
 				EED137AC1A79FB6D000864CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
