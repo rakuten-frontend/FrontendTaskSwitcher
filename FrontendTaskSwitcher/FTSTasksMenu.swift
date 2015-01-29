@@ -24,8 +24,22 @@ class FTSTasksMenu: NSMenu {
         self.statusItem.menu = self
     }
 
-    @IBAction func addProject(sender: AnyObject) {
+    func getDirectoryURL() -> NSURL! {
         // show file open dialog
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.canCreateDirectories = false
+        panel.allowsMultipleSelection = false
+        let result = panel.runModal()
+        return (result == NSOKButton) ? panel.directoryURL : nil;
+    }
+    
+    @IBAction func addProject(sender: AnyObject) {
+        let directoryURL = self.getDirectoryURL()
+        if ( directoryURL != nil ) {
+            println(directoryURL)
+        }
     }
     
 }
