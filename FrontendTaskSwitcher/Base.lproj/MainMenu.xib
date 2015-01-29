@@ -678,8 +678,13 @@
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
-        <menu id="6VS-sO-foe">
+        <menu id="6VS-sO-foe" customClass="FTSTasksMenu" customModule="FrontendTaskSwitcher" customModuleProvider="target">
             <items>
+                <menuItem isSeparatorItem="YES" id="yns-9r-dCg"/>
+                <menuItem title="Add Project..." id="2gd-yg-E5p">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Dfg-C3-n6k"/>
                 <menuItem title="Quit" id="f4z-5r-HdO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -687,7 +692,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="140.5" y="151.5"/>
+            <point key="canvasLocation" x="-188" y="-332.5"/>
         </menu>
     </objects>
 </document>
