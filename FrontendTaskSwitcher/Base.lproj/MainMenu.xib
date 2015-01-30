@@ -695,7 +695,31 @@
                     </connections>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="subMenu" destination="FAn-7U-fbZ" id="Bpv-sa-K97"/>
+            </connections>
             <point key="canvasLocation" x="-173" y="-200.5"/>
+        </menu>
+        <menu id="FAn-7U-fbZ">
+            <items>
+                <menuItem title="Start" id="0Nq-kU-iic">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Open with Terminal" id="hks-Gw-K0z">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Open with Finder" id="pPo-OR-rIZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="localhost:" id="y5N-Up-EXe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="iuK-by-OHn"/>
+                <menuItem title="Remove..." id="Ic7-RX-NgH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="48" y="-200.5"/>
         </menu>
     </objects>
 </document>
