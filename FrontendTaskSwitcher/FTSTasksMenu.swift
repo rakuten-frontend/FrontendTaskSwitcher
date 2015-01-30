@@ -110,6 +110,9 @@ class FTSTasksMenu: NSMenu {
                 FTSProjects.sharedInstance.add(data["path"]!, project: data)
             }
         }
+        else {
+            // TODO: show message (already registered)
+        }
     }
     
 }
