@@ -87,7 +87,7 @@ class FTSTasksMenu: NSMenu {
             self.insertItem(NSMenuItem(title: "No project", action: "", keyEquivalent: ""), atIndex: 0)
         }
     }
-    
+
     // MARK: -
     
     /**

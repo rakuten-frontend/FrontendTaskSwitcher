@@ -14,8 +14,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        FTSProjects.sharedInstance.load()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
+        FTSProjects.sharedInstance.save()
     }
 }
