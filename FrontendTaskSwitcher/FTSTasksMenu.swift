@@ -20,7 +20,7 @@ class FTSTasksMenu: NSMenu {
         let length : CGFloat = -1.0 // instead of NSVariableStatusItemLength
         self.statusItem = systemStatusBar.statusItemWithLength(length)
         self.statusItem.highlightMode = true
-        self.statusItem.title = "Tasks"
+        self.statusItem.title = "📦"
         self.statusItem.menu = self
         
         // observe
@@ -89,7 +89,7 @@ class FTSTasksMenu: NSMenu {
     *  MARK: Observe
     */
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if  keyPath == "length" {
+        if keyPath == "length" {
             self.updateProjects()
         }
     }
