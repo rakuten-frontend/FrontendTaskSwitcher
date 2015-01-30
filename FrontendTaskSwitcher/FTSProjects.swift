@@ -24,6 +24,23 @@ class FTSProjects: NSObject {
         }
         return Singleton.instance
     }
+    
+    // MARK: -
+    
+    func save() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(self.data, forKey: "data")
+        defaults.synchronize()
+    }
+    
+    func load() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var _data = defaults.objectForKey("data") as? Dictionary<String, Dictionary<String, AnyObject>>
+        if ( _data != nil ) {
+            self.data = _data!
+            self.length = self.data.count
+        }
+    }
 
     /**
     * Adaptor functions

@@ -12,6 +12,8 @@ class FTSTasksMenu: NSMenu {
 
     var statusItem : NSStatusItem!
 
+    @IBOutlet weak var subMenu: NSMenu!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
@@ -75,14 +77,17 @@ class FTSTasksMenu: NSMenu {
         if ( FTSProjects.sharedInstance.length > 0 ) {
             // add new menu items
             for (path, item) in FTSProjects.sharedInstance.data {
-                self.insertItem(NSMenuItem(title: item["name"] as String, action: "", keyEquivalent: ""), atIndex: 0)
+                let menuItem = NSMenuItem(title: item["name"] as String, action: nil, keyEquivalent: "")
+                menuItem.enabled = true
+                menuItem.submenu = self.subMenu.copy() as? NSMenu
+                self.insertItem(menuItem, atIndex: 0)
             }
         }
         else {
             self.insertItem(NSMenuItem(title: "No project", action: "", keyEquivalent: ""), atIndex: 0)
         }
     }
-    
+
     // MARK: -
     
     /**
@@ -104,6 +109,9 @@ class FTSTasksMenu: NSMenu {
             if ( data != nil && data["path"] != nil ) {
                 FTSProjects.sharedInstance.add(data["path"]!, project: data)
             }
+        }
+        else {
+            // TODO: show message (already registered)
         }
     }
     
