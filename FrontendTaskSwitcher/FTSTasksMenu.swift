@@ -20,7 +20,7 @@ class FTSTasksMenu: NSMenu {
         let length : CGFloat = -1.0 // instead of NSVariableStatusItemLength
         self.statusItem = systemStatusBar.statusItemWithLength(length)
         self.statusItem.highlightMode = true
-        self.statusItem.title = "Tasks"
+        self.statusItem.title = "📦"
         self.statusItem.menu = self
         
         // observe
@@ -74,7 +74,7 @@ class FTSTasksMenu: NSMenu {
         // add projects
         if ( FTSProjects.sharedInstance.length > 0 ) {
             // add new menu items
-            for item in FTSProjects.sharedInstance.data {
+            for (path, item) in FTSProjects.sharedInstance.data {
                 self.insertItem(NSMenuItem(title: item["name"] as String, action: "", keyEquivalent: ""), atIndex: 0)
             }
         }
@@ -89,7 +89,7 @@ class FTSTasksMenu: NSMenu {
     *  MARK: Observe
     */
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if  keyPath == "length" {
+        if keyPath == "length" {
             self.updateProjects()
         }
     }
@@ -101,9 +101,8 @@ class FTSTasksMenu: NSMenu {
         let directoryURL = self.getDirectoryURL()
         if ( directoryURL != nil ) {
             let data = self.getTaskConfigFilePathAndType(directoryURL)
-            if ( data != nil ) {
-                println(data)
-                FTSProjects.sharedInstance.append(data)
+            if ( data != nil && data["path"] != nil ) {
+                FTSProjects.sharedInstance.add(data["path"]!, project: data)
             }
         }
     }
