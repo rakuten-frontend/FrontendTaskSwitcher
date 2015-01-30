@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE5E6CF71A7B504D004A340E /* FTSProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSProjects.swift; sourceTree = "<group>"; };
 		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137921A79FB6D000864CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				EED137921A79FB6D000864CE /* AppDelegate.swift */,
 				EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */,
+				EE5E6CF71A7B504D004A340E /* FTSProjects.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
 			);
