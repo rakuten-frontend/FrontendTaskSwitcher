@@ -12,7 +12,7 @@ import Foundation
 class FTSProjects: NSObject {
 
     dynamic var length = 0 // for KVC
-    var data : [Dictionary<String, AnyObject>] = []
+    var data : Dictionary<String, Dictionary<String, AnyObject>> = Dictionary()
 
     /**
     * Singleton
@@ -33,16 +33,18 @@ class FTSProjects: NSObject {
         return self.data.count
     }
     
-    func append(project: [String: AnyObject]) {
-        var alreadyExist = false
-        for item in self.data {
-            if ( item["path"] as String == project["path"] as String ) {
-                alreadyExist = true
-                break
-            }
+    subscript(path: String) -> Dictionary<String, Dictionary<String, String>> {
+        get {
+            return self.data[path] as Dictionary<String, Dictionary<String, String>>
         }
-        if ( !alreadyExist ) {
-            self.data.append(project)
+        set(item) {
+            self.add(path, project: item)
+        }
+    }
+    
+    func add(path: String, project: Dictionary<String, AnyObject>) {
+        if ( path.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 ) {
+            self.data[path] = project
             self.length = self.data.count
         }
     }
