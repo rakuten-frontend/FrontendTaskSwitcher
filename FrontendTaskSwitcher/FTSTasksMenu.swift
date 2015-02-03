@@ -52,7 +52,7 @@ class FTSTasksMenu: NSMenu {
             let path = directory.path!+"/Gruntfile.js"
             if manager.fileExistsAtPath(path) {
                 let name = directory.path?.pathComponents.last as String?
-                return ["name": name ?? "", "path": path, "type": "grunt"]
+                return ["name": name ?? "", "path": path, "directory": directory.path!, "type": "grunt"]
             }
         }
         return nil
@@ -79,7 +79,7 @@ class FTSTasksMenu: NSMenu {
             for (path, item) in FTSProjects.sharedInstance.data {
                 let menuItem = NSMenuItem(title: item["name"] as String, action: nil, keyEquivalent: "")
                 menuItem.enabled = true
-                menuItem.submenu = self.subMenu.copy() as? NSMenu
+                menuItem.submenu = FTSActionMenu(params: item)
                 self.insertItem(menuItem, atIndex: 0)
             }
         }

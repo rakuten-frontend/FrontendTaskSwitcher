@@ -13,6 +13,7 @@
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
 		EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */; };
 		EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */; };
+		EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE043301A80D1130013F040 /* FTSActionMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EED137A21A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendTaskSwitcherTests.swift; sourceTree = "<group>"; };
 		EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTasksMenu.swift; sourceTree = "<group>"; };
+		EEE043301A80D1130013F040 /* FTSActionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSActionMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				EED137921A79FB6D000864CE /* AppDelegate.swift */,
 				EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */,
+				EEE043301A80D1130013F040 /* FTSActionMenu.swift */,
 				EE5E6CF71A7B504D004A340E /* FTSProjects.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
@@ -213,6 +216,7 @@
 			files = (
 				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
+				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
