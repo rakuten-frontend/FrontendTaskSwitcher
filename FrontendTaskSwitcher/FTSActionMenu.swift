@@ -54,7 +54,8 @@ class FTSActionMenu: NSMenu {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.executeCommand("cd " + dir + "; grunt serve;")
+        //self.executeCommand("cd " + dir + "; grunt serve;")
+        self.runTask()
     }
     
     func openWithTerminal(sender: AnyObject) {
@@ -82,6 +83,30 @@ class FTSActionMenu: NSMenu {
             let result = NSString(data: data, encoding: NSUTF8StringEncoding)
         }
     }
+    
+    /*
+    - (void)runTasfk {
+    [[DSUnixTaskSubProcessManager sharedManager] setLoggingEnabled:TRUE];
+    DSUnixTask *task = [DSUnixTaskSubProcessManager shellTask];
+    [task setCommand:@"/bin/cat"];
+    [task setStandardOutputHandler:^(DSUnixTask *task, NSString *output) {
+    NSLog(@"%@", output);
+    }];
+    [task launch];
+    [task writeStringToStandardInput:@"Hi!"];
+    }
+    */
+    
+    func runTask() {
+        let task = DSUnixTaskSubProcessManager.shellTask()
+        task.setCommand("/bin/cat")
+        task.standardOutputHandler = {(task, output) in
+            println("\(output)")
+        }
+        task.launch()
+        task.writeStringToStandardInput("Hi!")
+    }
+
 }
 
 
