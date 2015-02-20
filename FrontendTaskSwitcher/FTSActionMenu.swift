@@ -84,31 +84,10 @@ class FTSActionMenu: NSMenu {
         }
     }
     
-    /*
-    - (void)runTasfk {
-    [[DSUnixTaskSubProcessManager sharedManager] setLoggingEnabled:TRUE];
-    DSUnixTask *task = [DSUnixTaskSubProcessManager shellTask];
-    [task setCommand:@"/bin/cat"];
-    [task setStandardOutputHandler:^(DSUnixTask *task, NSString *output) {
-    NSLog(@"%@", output);
-    }];
-    [task launch];
-    [task writeStringToStandardInput:@"Hi!"];
-    }
-    */
-    
     func runTask() {
-        let task = DSUnixTaskSubProcessManager.shellTask()
-        task.setCommand("/bin/cat")
-        task.standardOutputHandler = {(task, output) in
-            println("\(output)")
-        }
-        task.launch()
-        task.writeStringToStandardInput("Hi!")
+        let task = FTSTask()
+        let dir = self.params["directory"] as String
+        task.start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
     }
 
 }
-
-
-
-

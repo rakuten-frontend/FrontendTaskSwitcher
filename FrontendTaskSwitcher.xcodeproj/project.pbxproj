@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E59CE1640FF6023ED62A83C /* libPods-FrontendTaskSwitcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6088BE57BD0F0AED12A812CB /* libPods-FrontendTaskSwitcher.a */; };
 		EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
+		EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA576CC1A97251A00CADCFA /* FTSTask.swift */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
@@ -33,6 +34,7 @@
 		D084B0CD9007D0D0FD5AE611 /* Pods-FrontendTaskSwitcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrontendTaskSwitcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FrontendTaskSwitcher/Pods-FrontendTaskSwitcher.debug.xcconfig"; sourceTree = "<group>"; };
 		EE14578D1A95E3EA0087FDF2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		EE5E6CF71A7B504D004A340E /* FTSProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSProjects.swift; sourceTree = "<group>"; };
+		EEA576CC1A97251A00CADCFA /* FTSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTask.swift; sourceTree = "<group>"; };
 		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137921A79FB6D000864CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */,
 				EEE043301A80D1130013F040 /* FTSActionMenu.swift */,
 				EE5E6CF71A7B504D004A340E /* FTSProjects.swift */,
+				EEA576CC1A97251A00CADCFA /* FTSTask.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */,
 				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
 				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
