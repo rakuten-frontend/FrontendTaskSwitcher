@@ -54,7 +54,7 @@ class FTSActionMenu: NSMenu {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        FTSTask().start("cd " + dir + " && grunt serve")
+        FTSTask(workingDirectory: dir).start("grunt serve")
     }
     
     func openWithTerminal(sender: AnyObject) {
