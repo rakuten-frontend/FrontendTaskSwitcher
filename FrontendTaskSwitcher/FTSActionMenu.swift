@@ -54,61 +54,17 @@ class FTSActionMenu: NSMenu {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        //self.executeCommand("cd " + dir + "; grunt serve;")
-        self.runTask()
+        FTSTask().start("cd " + dir + " && grunt serve")
     }
     
     func openWithTerminal(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.executeCommand("open -a /Applications/Utilities/Terminal.app " + dir + ";")
+        FTSTask().start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
     }
     
     func openWithFinder(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.executeCommand("open " + dir + ";")
-    }
-    
-    func executeCommand(command: String) {
-        autoreleasepool { () -> () in
-            let task = NSTask()
-            let pipe = NSPipe()
-            
-            task.launchPath = "/bin/sh"
-            task.arguments = ["-c", command]
-            task.standardOutput = pipe
-            task.launch()
-            
-            let handle = pipe.fileHandleForReading
-            let data = handle.readDataToEndOfFile()
-            let result = NSString(data: data, encoding: NSUTF8StringEncoding)
-        }
-    }
-    
-    /*
-    - (void)runTasfk {
-    [[DSUnixTaskSubProcessManager sharedManager] setLoggingEnabled:TRUE];
-    DSUnixTask *task = [DSUnixTaskSubProcessManager shellTask];
-    [task setCommand:@"/bin/cat"];
-    [task setStandardOutputHandler:^(DSUnixTask *task, NSString *output) {
-    NSLog(@"%@", output);
-    }];
-    [task launch];
-    [task writeStringToStandardInput:@"Hi!"];
-    }
-    */
-    
-    func runTask() {
-        let task = DSUnixTaskSubProcessManager.shellTask()
-        task.setCommand("/bin/cat")
-        task.standardOutputHandler = {(task, output) in
-            println("\(output)")
-        }
-        task.launch()
-        task.writeStringToStandardInput("Hi!")
+        FTSTask().start("open " + dir + ";")
     }
 
 }
-
-
-
-
