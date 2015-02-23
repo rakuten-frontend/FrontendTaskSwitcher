@@ -12,6 +12,7 @@ import Foundation
 class FTSActionMenu: NSMenu {
 
     var params : [String : AnyObject]!
+    var task : FTSTask!
     
     let items = [
         ["title": "Start",              "action": "start:",            "key": ""],
@@ -34,6 +35,9 @@ class FTSActionMenu: NSMenu {
         
         self.params = params
         self.initMenuItems()
+        
+        let dir = params["directory"] as String
+        self.task = FTSTask(workingDirectory: dir)
     }
     
     private func initMenuItems() {
@@ -54,17 +58,17 @@ class FTSActionMenu: NSMenu {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        FTSTask(workingDirectory: dir).start("grunt serve")
+        self.task.start("grunt serve")
     }
     
     func openWithTerminal(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        FTSTask().start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
+        self.task.start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
     }
     
     func openWithFinder(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        FTSTask().start("open " + dir + ";")
+        self.task.start("open " + dir + ";")
     }
 
 }

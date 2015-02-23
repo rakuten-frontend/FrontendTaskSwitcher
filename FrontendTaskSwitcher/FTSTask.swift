@@ -25,7 +25,7 @@ class FTSTask: NSObject {
     
     func start(command: String,
         outputHandler: (String!) -> Void = { (output) in },
-        errorHandler: (String!) -> Void = { (output) in } ) {
+        errorHandler: (String!) -> Void = { (output) in } ) -> FTSTask {
         _task.setCommand(command)
         _task.standardOutputHandler = { (task, output) in
             println(output)
@@ -36,5 +36,9 @@ class FTSTask: NSObject {
             errorHandler(output)
         }
         _task.launch()
+        return self
+    }
+    
+    func stop() {
     }
 }
