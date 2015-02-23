@@ -54,40 +54,17 @@ class FTSActionMenu: NSMenu {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        //self.executeCommand("cd " + dir + "; grunt serve;")
-        self.runTask()
+        FTSTask().start("cd " + dir + " && grunt serve")
     }
     
     func openWithTerminal(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.executeCommand("open -a /Applications/Utilities/Terminal.app " + dir + ";")
+        FTSTask().start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
     }
     
     func openWithFinder(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.executeCommand("open " + dir + ";")
-    }
-    
-    func executeCommand(command: String) {
-        autoreleasepool { () -> () in
-            let task = NSTask()
-            let pipe = NSPipe()
-            
-            task.launchPath = "/bin/sh"
-            task.arguments = ["-c", command]
-            task.standardOutput = pipe
-            task.launch()
-            
-            let handle = pipe.fileHandleForReading
-            let data = handle.readDataToEndOfFile()
-            let result = NSString(data: data, encoding: NSUTF8StringEncoding)
-        }
-    }
-    
-    func runTask() {
-        let task = FTSTask()
-        let dir = self.params["directory"] as String
-        task.start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
+        FTSTask().start("open " + dir + ";")
     }
 
 }

@@ -15,12 +15,20 @@ class FTSTask: NSObject {
     override init() {
         super.init()
         self.task = DSUnixTaskSubProcessManager.shellTask()
+        self.task.environment = ["PATH": "/bin:/usr/bin:/usr/local/bin"]
     }
     
-    func start(command: String) {
+    func start(command: String,
+        outputHandler: (String!) -> Void = { (output) in },
+        errorHandler: (String!) -> Void = { (output) in } ) {
         self.task.setCommand(command)
         self.task.standardOutputHandler = { (task, output) in
             println(output)
+            outputHandler(output)
+        }
+        self.task.standardErrorHandler = { (task, output) in
+            println(output)
+            errorHandler(output)
         }
         self.task.launch()
     }
