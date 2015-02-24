@@ -42,9 +42,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
         self.delegate = self
         self.params = params
         self.initMenuItems()
-        
-        let dir = params["directory"] as String
-        self.task = FTSTask(currentDirectory: dir)
+        self.task = FTSTask()
     }
     
     private func initMenuItems() {
@@ -66,7 +64,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.task.start("grunt serve")
+        self.task.start("grunt serve", currentDirectory: dir)
     }
     
     func stop(sender: AnyObject) {

@@ -12,9 +12,16 @@ class FTSTask: NSObject {
     
     private var _task : NSTask!
     
-    override init() {
-        super.init()
-        _task = NSTask()
+    deinit {
+        if ( self.isRunning() ) {
+            _task.terminate()
+        }
+    }
+    
+    private func initializeTask() {
+        if ( _task == nil ) {
+            _task = NSTask()
+        }
         _task.environment = ["PATH": "/bin:/usr/bin:/usr/local/bin"]
         
         let outPipe = NSPipe()
@@ -24,30 +31,23 @@ class FTSTask: NSObject {
         
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self,
-            selector: Selector("getData:"),
+            selector: Selector("readCompleted:"),
             name: NSFileHandleReadCompletionNotification,
             object:outPipe.fileHandleForReading )
         outPipe.fileHandleForReading.readInBackgroundAndNotify()
-
+        
         nc.addObserver(self,
             selector: Selector("taskDidTerminated:"),
             name: NSTaskDidTerminateNotification,
             object: _task)
     }
-    
-    convenience init(currentDirectory: String) {
-        self.init()
-        _task.currentDirectoryPath = currentDirectory
-    }
-    
-    deinit {
-        if ( _task.running ) {
-            _task.terminate()
-        }
-    }
 
-    func start(command: String) {
-        if ( !_task.running ) {
+    func start(command: String, currentDirectory: String = "") {
+        self.initializeTask()
+        if ( currentDirectory != "" ) {
+            _task.currentDirectoryPath = currentDirectory
+        }
+        if ( !self.isRunning() ) {
             _task.launchPath = "/bin/sh"
             _task.arguments = ["-c", command]
             _task.launch()
@@ -56,31 +56,27 @@ class FTSTask: NSObject {
     }
     
     func interrupt() {
-        if ( _task.running ) {
+        if ( self.isRunning() ) {
             _task.interrupt()
-            println("task interrupt")
         }
     }
     
     func isRunning() -> Bool {
-        return _task.running
+        return _task != nil && _task.running
     }
     
-    func getData(notification: NSNotification) {
-        println("getData")
+    func readCompleted(notification: NSNotification) {
         let data: NSData? = notification.userInfo?[NSFileHandleNotificationDataItem] as? NSData
         if data?.length > 0 {
-            println(NSString(data: data!, encoding: NSUTF8StringEncoding))
-        }
-        else {
-            println("no data")
+            println(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
         }
     }
     
     func taskDidTerminated(notification: NSNotification) {
         println("taskDidTerminated")
         let nc = NSNotificationCenter.defaultCenter()
-        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: _task)        
+        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: _task)
+        _task = nil
     }
 
 }
