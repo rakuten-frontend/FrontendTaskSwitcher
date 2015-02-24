@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class FTSTasksMenu: NSMenu {
+class FTSTasksMenu: NSMenu, NSMenuDelegate {
 
     var statusItem : NSStatusItem!
 
@@ -17,6 +17,8 @@ class FTSTasksMenu: NSMenu {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
+        self.delegate = self
+        
         // setup
         let systemStatusBar = NSStatusBar.systemStatusBar()
         let length : CGFloat = -1.0 // instead of NSVariableStatusItemLength
@@ -112,6 +114,23 @@ class FTSTasksMenu: NSMenu {
         }
         else {
             // TODO: show message (already registered)
+        }
+    }
+
+    // MARK: - Menu Delegate
+    func menuWillOpen(menu: NSMenu) {
+        
+        // set running indicator
+        let items = self.itemArray
+        for item in items as [NSMenuItem] {
+            item.state = NSOffState
+            if var submenu = item.submenu as? FTSActionMenu {
+                if let task = submenu.task? {
+                    if ( task.isRunning() ) {
+                        item.state = NSOnState
+                    }
+                }
+            }
         }
     }
     
