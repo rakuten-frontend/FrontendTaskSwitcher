@@ -11,7 +11,7 @@ import Cocoa
 class FTSTask: NSObject {
     
     private var _task : NSTask!
-
+    
     override init() {
         super.init()
         _task = NSTask()
@@ -28,8 +28,9 @@ class FTSTask: NSObject {
             name: NSFileHandleReadCompletionNotification,
             object:outPipe.fileHandleForReading )
         outPipe.fileHandleForReading.readInBackgroundAndNotify()
+
         nc.addObserver(self,
-            selector: Selector("taskExited:"),
+            selector: Selector("taskDidTerminated:"),
             name: NSTaskDidTerminateNotification,
             object: _task)
     }
@@ -40,19 +41,29 @@ class FTSTask: NSObject {
     }
     
     deinit {
-        _task.terminate()
+        if ( _task.running ) {
+            _task.terminate()
+        }
     }
 
     func start(command: String) {
-        _task.launchPath = "/bin/sh"
-        _task.arguments = ["-c", command]
-        _task.launch()
+        if ( !_task.running ) {
+            _task.launchPath = "/bin/sh"
+            _task.arguments = ["-c", command]
+            _task.launch()
+            println("task start")
+        }
     }
     
-    func stop() {
+    func interrupt() {
         if ( _task.running ) {
             _task.interrupt()
+            println("task interrupt")
         }
+    }
+    
+    func isRunning() -> Bool {
+        return _task.running
     }
     
     func getData(notification: NSNotification) {
@@ -66,44 +77,10 @@ class FTSTask: NSObject {
         }
     }
     
-    func taskExited(notification: NSNotification) {
-        println("taskExited")
+    func taskDidTerminated(notification: NSNotification) {
+        println("taskDidTerminated")
         let nc = NSNotificationCenter.defaultCenter()
-        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: _task)
+        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: _task)        
     }
 
-    /*
-    private var _task : DSUnixTask!
-    
-    override init() {
-        super.init()
-        _task = DSUnixTaskSubProcessManager.shellTask()
-        _task.environment = ["PATH": "/bin:/usr/bin:/usr/local/bin"]
-    }
-    
-    convenience init(workingDirectory: String) {
-        self.init()
-        _task.workingDirectory = workingDirectory
-    }
-    
-    func start(command: String,
-        outputHandler: (String!) -> Void = { (output) in },
-        errorHandler: (String!) -> Void = { (output) in } ) -> FTSTask {
-        _task.setCommand(command)
-        _task.standardOutputHandler = { (task, output) in
-            println(output)
-            outputHandler(output)
-        }
-        _task.standardErrorHandler = { (task, output) in
-            println(output)
-            errorHandler(output)
-        }
-        _task.launch()
-        return self
-    }
-    
-    func stop() {
-    }
-    */
-    
 }

@@ -16,6 +16,7 @@ class FTSActionMenu: NSMenu {
     
     let items = [
         ["title": "Start",              "action": "start:",            "key": ""],
+        //["title": "Stop",               "action": "stop:",             "key": ""],
         ["title": "Open with Terminal", "action": "openWithTerminal:", "key": ""],
         ["title": "Open with Finder",   "action": "openWithFinder:",   "key": ""],
         ["separator": true],
@@ -56,18 +57,13 @@ class FTSActionMenu: NSMenu {
         }
     }
     
-    var tempFlag = false
-    
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        if ( tempFlag ) {
-            self.task.stop()
-            tempFlag = false
-        }
-        else {
-            self.task.start("grunt serve")
-            tempFlag = true
-        }
+        self.task.start("grunt serve")
+    }
+    
+    func stop(sender: AnyObject) {
+        self.task.interrupt()
     }
     
     func openWithTerminal(sender: AnyObject) {
@@ -79,5 +75,4 @@ class FTSActionMenu: NSMenu {
         let dir = self.params["directory"] as String
         self.task.start("open " + dir + ";")
     }
-
 }
