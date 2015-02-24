@@ -3,11 +3,8 @@
 
 target 'FrontendTaskSwitcher' do
 
-pod 'DSUnixTask', '~> 0.1'
-  
 end
 
 target 'FrontendTaskSwitcherTests' do
 
 end
-

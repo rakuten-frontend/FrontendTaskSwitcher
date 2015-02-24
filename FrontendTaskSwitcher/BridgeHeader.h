@@ -9,6 +9,4 @@
 #ifndef FrontendTaskSwitcher_BridgeHeader_h
 #define FrontendTaskSwitcher_BridgeHeader_h
 
-#import <DSUnixTaskSubProcessManager.h>
-
 #endif
