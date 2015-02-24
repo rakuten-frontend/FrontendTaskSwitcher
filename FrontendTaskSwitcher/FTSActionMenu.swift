@@ -37,7 +37,7 @@ class FTSActionMenu: NSMenu {
         self.initMenuItems()
         
         let dir = params["directory"] as String
-        self.task = FTSTask(workingDirectory: dir)
+        self.task = FTSTask(currentDirectory: dir)
     }
     
     private func initMenuItems() {
@@ -56,9 +56,18 @@ class FTSActionMenu: NSMenu {
         }
     }
     
+    var tempFlag = false
+    
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.task.start("grunt serve")
+        if ( tempFlag ) {
+            self.task.stop()
+            tempFlag = false
+        }
+        else {
+            self.task.start("grunt serve")
+            tempFlag = true
+        }
     }
     
     func openWithTerminal(sender: AnyObject) {
