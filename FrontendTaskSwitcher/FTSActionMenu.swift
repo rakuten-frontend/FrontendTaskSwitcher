@@ -9,14 +9,19 @@
 import Cocoa
 import Foundation
 
-class FTSActionMenu: NSMenu {
+enum MenuItem : Int {
+    case Start = 1
+    case Stop
+}
+
+class FTSActionMenu: NSMenu, NSMenuDelegate {
 
     var params : [String : AnyObject]!
     var task : FTSTask!
     
     let items = [
-        ["title": "Start",              "action": "start:",            "key": ""],
-        //["title": "Stop",               "action": "stop:",             "key": ""],
+        ["title": "Start",              "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
+        ["title": "Stop",               "action": "stop:",             "key": "", "tag": MenuItem.Stop.rawValue],
         ["title": "Open with Terminal", "action": "openWithTerminal:", "key": ""],
         ["title": "Open with Finder",   "action": "openWithFinder:",   "key": ""],
         ["separator": true],
@@ -34,6 +39,7 @@ class FTSActionMenu: NSMenu {
     init(params: [String: AnyObject]) {
         super.init()
         
+        self.delegate = self
         self.params = params
         self.initMenuItems()
         
@@ -44,7 +50,7 @@ class FTSActionMenu: NSMenu {
     private func initMenuItems() {
         for item in self.items {
             var menuItem : NSMenuItem!
-            if ( item["separator"] == true ) {
+            if ( item["separator"] as? Bool == true ) {
                 menuItem = NSMenuItem.separatorItem()
             }
             else {
@@ -52,6 +58,7 @@ class FTSActionMenu: NSMenu {
                     action: Selector(item["action"] as String),
                     keyEquivalent: item["key"] as String)
                 menuItem.target = self
+                menuItem.tag = item["tag"] as? Int ?? 0
             }
             self.addItem(menuItem)
         }
@@ -74,5 +81,18 @@ class FTSActionMenu: NSMenu {
     func openWithFinder(sender: AnyObject) {
         let dir = self.params["directory"] as String
         self.task.start("open " + dir + ";")
+    }
+    
+    // MARK: - menu delegate
+    
+    func menuWillOpen(menu: NSMenu) {
+        if ( self.task.isRunning() ) {
+            menu.itemWithTag(MenuItem.Start.rawValue)?.hidden = true
+            menu.itemWithTag(MenuItem.Stop.rawValue)?.hidden = false
+        }
+        else {
+            menu.itemWithTag(MenuItem.Start.rawValue)?.hidden = false
+            menu.itemWithTag(MenuItem.Stop.rawValue)?.hidden = true
+        }
     }
 }
