@@ -65,41 +65,9 @@ class FTSProjects: NSObject {
             self.length = self.data.count
         }
     }
-
-    /*
-    func setArray(otherArray: NSArray) {
-        self.data.setArray(otherArray)
+    
+    func removeValueForKey(key: String) {
+        self.data.removeValueForKey(key)
         self.length = self.data.count
     }
-    
-    func indexOfObjectPassingTest(predicate: ((AnyObject!, Int, UnsafeMutablePointer<ObjCBool>) -> Bool)!) -> Int {
-        return self.data.indexOfObjectPassingTest(predicate)
-    }
-    
-    func addObject(anObject: AnyObject!) {
-        self.data.addObject(anObject)
-        self.length = self.data.count
-    }
-    
-    func objectAtIndex(index: Int) -> AnyObject! {
-        return self.data.objectAtIndex(index)
-    }
-    
-    func addObjectsFromArray(otherArray: [AnyObject]!) {
-        if ( otherArray.count > 0 ) {
-            self.data.addObjectsFromArray(otherArray)
-            self.length = self.data.count
-        }
-    }
-    
-    func removeObjectAtIndex(index: Int) {
-        self.data.removeObjectAtIndex(index)
-        self.length = self.data.count
-    }
-    
-    func removeAllObjects() {
-        self.data.removeAllObjects()
-        self.length = 0
-    }
-    */
 }

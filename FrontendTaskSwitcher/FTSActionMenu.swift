@@ -12,6 +12,7 @@ import Foundation
 enum MenuItem : Int {
     case Start = 1
     case Stop
+    case Remove
 }
 
 class FTSActionMenu: NSMenu, NSMenuDelegate {
@@ -22,10 +23,11 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     let items = [
         ["title": "Start",              "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
         ["title": "Stop",               "action": "stop:",             "key": "", "tag": MenuItem.Stop.rawValue],
+        ["separator": true],
         ["title": "Open with Terminal", "action": "openWithTerminal:", "key": ""],
         ["title": "Open with Finder",   "action": "openWithFinder:",   "key": ""],
         ["separator": true],
-        ["title": "Remove...",          "action": "remove",            "key": ""],
+        ["title": "Remove...",          "action": "remove:",            "key": "", "tag": MenuItem.Remove.rawValue],
     ]
 
     required init(coder aDecoder: NSCoder) {
@@ -41,6 +43,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
         
         self.delegate = self
         self.params = params
+        self.autoenablesItems = false
         self.initMenuItems()
         self.task = FTSTask()
     }
@@ -81,16 +84,46 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
         self.task.start("open " + dir + ";")
     }
     
+    func remove(sender: AnyObject) {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlertStyle.InformationalAlertStyle
+        alert.informativeText = NSLocalizedString("Confirmation", comment: "")
+        alert.messageText = NSLocalizedString("Do you want to remove the task?",
+            comment: "Message of confirmation Dialog")
+        alert.addButtonWithTitle("Cancel")
+        alert.addButtonWithTitle("Remove")
+        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+        let result = alert.runModal()
+        if ( result == NSAlertSecondButtonReturn ) {
+            // remove
+            self.removeProject()
+        }
+    }
+    
+    // MARK: - 
+    
+    func removeProject() {
+        // stop task
+        if self.task.isRunning() {
+            self.stop(self)
+        }
+        // remove project
+        let path = self.params["path"] as String
+        FTSProjects.sharedInstance.removeValueForKey(path)
+    }
+    
     // MARK: - menu delegate
     
     func menuWillOpen(menu: NSMenu) {
         if ( self.task.isRunning() ) {
             menu.itemWithTag(MenuItem.Start.rawValue)?.hidden = true
             menu.itemWithTag(MenuItem.Stop.rawValue)?.hidden = false
+            menu.itemWithTag(MenuItem.Remove.rawValue)?.enabled = false
         }
         else {
             menu.itemWithTag(MenuItem.Start.rawValue)?.hidden = false
             menu.itemWithTag(MenuItem.Stop.rawValue)?.hidden = true
+            menu.itemWithTag(MenuItem.Remove.rawValue)?.enabled = true
         }
     }
 }
