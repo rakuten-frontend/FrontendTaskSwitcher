@@ -13,3 +13,7 @@ xcodebuild clean -project "${PROJ_FILE_PATH}"
 
 # build
 xcodebuild -project "${PROJ_FILE_PATH}" -sdk "${SDK}" -configuration "${CONFIGURATION}" -target "${TARGET_NAME}"
+
+# zip
+cd build/Release/
+zip -r ../../FrontendTaskSwitcher.app.zip FrontendTaskSwitcher.app
