@@ -401,6 +401,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FrontendTaskSwitcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FrontendTaskSwitcher/BridgeHeader.h;
 			};
@@ -414,6 +415,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FrontendTaskSwitcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FrontendTaskSwitcher/BridgeHeader.h;
 			};

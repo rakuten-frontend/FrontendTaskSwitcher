@@ -1,10 +1,10 @@
-# Task Runner Controller for Mac
+# Front-end Task Switcher for Mac
 
-> Task Runner Controller for Mac
+> Front-end Task Switcher for Mac
 
 ## Overview
 
-This application allows you to manage task runners such as Grunt.
+This OS X menubar application allows you to control projects which use a task runner such as Grunt.
 
 ## Contributing
 Now we are considering our contribution policy in the future development.
@@ -14,8 +14,9 @@ Thank you.
 
 ## ToDo
 
-* Gulp support
-* About dialog
+* Gulp support.
+* About dialog.
+* Show the URL of local server.
 
 ## License
 Copyright (c) 2015 Rakuten, Inc. Licensed under the [MIT License](LICENSE).
