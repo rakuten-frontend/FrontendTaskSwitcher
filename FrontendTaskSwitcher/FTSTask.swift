@@ -12,6 +12,9 @@ class FTSTask: NSObject {
     
     private var _task : NSTask!
     
+    var outPipe   : NSPipe!
+    var errorPipe : NSPipe!
+    
     deinit {
         if ( self.isRunning() ) {
             _task.terminate()
@@ -24,22 +27,22 @@ class FTSTask: NSObject {
         }
         _task.environment = ["PATH": "/bin:/usr/bin:/usr/local/bin"]
         
-        let outPipe = NSPipe()
+        outPipe = NSPipe()
         _task.standardOutput = outPipe
-        let errorPipe = NSPipe()
+        errorPipe = NSPipe()
         _task.standardError = errorPipe
         
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self,
             selector: Selector("readCompleted:"),
             name: NSFileHandleReadCompletionNotification,
-            object:outPipe.fileHandleForReading )
+            object:nil)
         outPipe.fileHandleForReading.readInBackgroundAndNotify()
         
         nc.addObserver(self,
             selector: Selector("taskDidTerminated:"),
             name: NSTaskDidTerminateNotification,
-            object: _task)
+            object:nil)
     }
 
     func start(command: String, currentDirectory: String = "") {
@@ -51,7 +54,7 @@ class FTSTask: NSObject {
             _task.launchPath = "/bin/sh"
             _task.arguments = ["-c", command]
             _task.launch()
-            println("task start")
+            println("=== task start ===")
         }
     }
     
@@ -68,14 +71,23 @@ class FTSTask: NSObject {
     func readCompleted(notification: NSNotification) {
         let data: NSData? = notification.userInfo?[NSFileHandleNotificationDataItem] as? NSData
         if data?.length > 0 {
-            println(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
+            let pattern = "\\[[0-9]+m"
+            let replace = ""
+            var text = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String ?? ""
+            text = text.stringByReplacingOccurrencesOfString(pattern,
+                withString: replace,
+                options: NSStringCompareOptions.RegularExpressionSearch,
+                range: text.rangeOfString(text))
+            print(text)
+            outPipe.fileHandleForReading.readInBackgroundAndNotify()
         }
     }
     
     func taskDidTerminated(notification: NSNotification) {
-        println("taskDidTerminated")
+        println("=== taskDidTerminated ===")
         let nc = NSNotificationCenter.defaultCenter()
-        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: _task)
+        nc.removeObserver(self, name: NSTaskDidTerminateNotification, object: nil)
+        nc.removeObserver(self, name: NSFileHandleReadCompletionNotification, object: nil)
         _task = nil
     }
 

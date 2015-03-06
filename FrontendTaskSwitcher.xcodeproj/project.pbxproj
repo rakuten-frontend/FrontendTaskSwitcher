@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
 		EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA576CC1A97251A00CADCFA /* FTSTask.swift */; };
+		EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
@@ -31,6 +32,8 @@
 		EE14578D1A95E3EA0087FDF2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		EE5E6CF71A7B504D004A340E /* FTSProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSProjects.swift; sourceTree = "<group>"; };
 		EEA576CC1A97251A00CADCFA /* FTSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTask.swift; sourceTree = "<group>"; };
+		EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMR_ANSIEscapeHelper.h; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.h; sourceTree = SOURCE_ROOT; };
+		EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMR_ANSIEscapeHelper.m; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.m; sourceTree = SOURCE_ROOT; };
 		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137921A79FB6D000864CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				EEA576CC1A97251A00CADCFA /* FTSTask.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
+				EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */,
+				EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
 			);
 			path = FrontendTaskSwitcher;
@@ -231,6 +236,7 @@
 				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
 				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
+				EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
