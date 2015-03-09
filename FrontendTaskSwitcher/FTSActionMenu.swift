@@ -69,7 +69,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.task.start("grunt serve | tee .log", currentDirectory: dir)
+        self.task.start("grunt --no-color serve | tee .log", currentDirectory: dir)
     }
     
     func stop(sender: AnyObject) {
@@ -104,7 +104,8 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     
     func showLog(sender: AnyObject) {
         if ( self.logWindow == nil ) {
-            self.logWindow = LogWindowController(windowNibName: "LogWindow")
+            let logFilePath = self.params["directory"] as String + "/.log"
+            self.logWindow = LogWindowController(windowNibName: "LogWindow", logFilePath: logFilePath)
             let title = self.params["name"] as String
             self.logWindow.window?.title = "Log - " + title
             self.logWindow.showWindow(self)

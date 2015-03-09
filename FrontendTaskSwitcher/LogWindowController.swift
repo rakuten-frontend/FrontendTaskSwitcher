@@ -10,10 +10,36 @@ import Cocoa
 
 class LogWindowController: NSWindowController {
 
+    var logFilePath : String!
+
+    @IBOutlet var logTextView: NSTextView!
+    
+    convenience init(windowNibName: NSString, logFilePath: NSString) {
+        self.init(windowNibName: windowNibName)
+        self.logFilePath = logFilePath
+    }
+
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        // show log file text
+        self.loadLogFile()
     }
-    
+
+    func loadLogFile() {
+        if self.logFilePath != nil {
+            var error : NSError?
+            if let text = String(contentsOfFile: self.logFilePath, encoding: NSUTF8StringEncoding, error: &error) {
+                self.appendText(text)
+            }
+        }
+    }
+
+    func appendText(text: String) {
+        self.logTextView.textStorage?.beginEditing()
+        let attributedString = NSAttributedString(string: text)
+        self.logTextView.textStorage?.appendAttributedString(attributedString)
+        self.logTextView.textStorage?.endEditing()
+        self.logTextView.autoscroll(NSEvent())
+    }
 }

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LogWindowController" customModule="FrontendTaskSwitcher" customModuleProvider="target">
             <connections>
+                <outlet property="logTextView" destination="Zt0-Ym-iT4" id="xEj-pK-qS3"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="sV1-hc-WxH"/>
             </connections>
         </customObject>
