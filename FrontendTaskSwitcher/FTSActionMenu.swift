@@ -19,15 +19,17 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
 
     var params : [String : AnyObject]!
     var task : FTSTask!
+    var logWindow : NSWindowController!
     
     let items = [
-        ["title": "Start",              "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
-        ["title": "Stop",               "action": "stop:",             "key": "", "tag": MenuItem.Stop.rawValue],
+        ["title": "Start (grunt serve)", "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
+        ["title": "Stop",                "action": "stop:",             "key": "", "tag": MenuItem.Stop.rawValue],
         ["separator": true],
-        ["title": "Open with Terminal", "action": "openWithTerminal:", "key": ""],
-        ["title": "Open with Finder",   "action": "openWithFinder:",   "key": ""],
+        ["title": "Open with Terminal",  "action": "openWithTerminal:", "key": ""],
+        ["title": "Open with Finder",    "action": "openWithFinder:",   "key": ""],
+        ["title": "Show Log",            "action": "showLog:",          "key": ""],
         ["separator": true],
-        ["title": "Remove...",          "action": "remove:",            "key": "", "tag": MenuItem.Remove.rawValue],
+        ["title": "Remove...",           "action": "remove:",           "key": "", "tag": MenuItem.Remove.rawValue],
     ]
 
     required init(coder aDecoder: NSCoder) {
@@ -67,7 +69,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     
     func start(sender: AnyObject) {
         let dir = self.params["directory"] as String
-        self.task.start("grunt serve", currentDirectory: dir)
+        self.task.start("grunt --no-color serve | tee .log", currentDirectory: dir)
     }
     
     func stop(sender: AnyObject) {
@@ -98,6 +100,17 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
             // remove
             self.removeProject()
         }
+    }
+    
+    func showLog(sender: AnyObject) {
+        if ( self.logWindow == nil ) {
+            let logFilePath = self.params["directory"] as String + "/.log"
+            self.logWindow = LogWindowController(windowNibName: "LogWindow", logFilePath: logFilePath)
+            let title = self.params["name"] as String
+            self.logWindow.window?.title = "Log - " + title
+            self.logWindow.showWindow(self)
+        }
+        NSApp.activateIgnoringOtherApps(true)
     }
     
     // MARK: - 
