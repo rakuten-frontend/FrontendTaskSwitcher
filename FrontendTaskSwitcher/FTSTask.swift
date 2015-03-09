@@ -71,6 +71,7 @@ class FTSTask: NSObject {
     func readCompleted(notification: NSNotification) {
         let data: NSData? = notification.userInfo?[NSFileHandleNotificationDataItem] as? NSData
         if data?.length > 0 {
+            /*
             let pattern = "\\[[0-9]+m"
             let replace = ""
             var text = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String ?? ""
@@ -78,6 +79,9 @@ class FTSTask: NSObject {
                 withString: replace,
                 options: NSStringCompareOptions.RegularExpressionSearch,
                 range: text.rangeOfString(text))
+            print(text)
+            */
+            var text = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String ?? ""
             print(text)
             outPipe.fileHandleForReading.readInBackgroundAndNotify()
         }
