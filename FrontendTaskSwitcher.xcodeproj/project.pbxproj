@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
+		EE9387AF1AADC5B100F5D39E /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9387AD1AADC5B100F5D39E /* LogWindow.xib */; };
+		EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9387B01AADCA1800F5D39E /* LogWindowController.swift */; };
 		EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA576CC1A97251A00CADCFA /* FTSTask.swift */; };
 		EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		EE14578D1A95E3EA0087FDF2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		EE5E6CF71A7B504D004A340E /* FTSProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSProjects.swift; sourceTree = "<group>"; };
+		EE9387AE1AADC5B100F5D39E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LogWindow.xib; sourceTree = "<group>"; };
+		EE9387B01AADCA1800F5D39E /* LogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWindowController.swift; sourceTree = "<group>"; };
 		EEA576CC1A97251A00CADCFA /* FTSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTask.swift; sourceTree = "<group>"; };
 		EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMR_ANSIEscapeHelper.h; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.h; sourceTree = SOURCE_ROOT; };
 		EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMR_ANSIEscapeHelper.m; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.m; sourceTree = SOURCE_ROOT; };
@@ -98,8 +102,10 @@
 				EEE043301A80D1130013F040 /* FTSActionMenu.swift */,
 				EE5E6CF71A7B504D004A340E /* FTSProjects.swift */,
 				EEA576CC1A97251A00CADCFA /* FTSTask.swift */,
+				EE9387B01AADCA1800F5D39E /* LogWindowController.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
+				EE9387AD1AADC5B100F5D39E /* LogWindow.xib */,
 				EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */,
 				EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EED137951A79FB6D000864CE /* Images.xcassets in Resources */,
+				EE9387AF1AADC5B100F5D39E /* LogWindow.xib in Resources */,
 				EED137981A79FB6D000864CE /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +242,7 @@
 				EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */,
 				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
+				EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */,
 				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
 				EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
@@ -260,6 +268,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EE9387AD1AADC5B100F5D39E /* LogWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE9387AE1AADC5B100F5D39E /* Base */,
+			);
+			name = LogWindow.xib;
+			sourceTree = "<group>";
+		};
 		EED137961A79FB6D000864CE /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
