@@ -10,7 +10,7 @@
 		A988E12D1AAF2956004D46C4 /* FTSAboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988E12C1AAF2956004D46C4 /* FTSAboutWindow.swift */; };
 		EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
 		EE9387AF1AADC5B100F5D39E /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9387AD1AADC5B100F5D39E /* LogWindow.xib */; };
-		EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9387B01AADCA1800F5D39E /* LogWindowController.swift */; };
+		EE9387B21AADCA1800F5D39E /* FTSLogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9387B01AADCA1800F5D39E /* FTSLogWindowController.swift */; };
 		EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA576CC1A97251A00CADCFA /* FTSTask.swift */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
@@ -35,7 +35,7 @@
 		EE14578D1A95E3EA0087FDF2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		EE5E6CF71A7B504D004A340E /* FTSProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSProjects.swift; sourceTree = "<group>"; };
 		EE9387AE1AADC5B100F5D39E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LogWindow.xib; sourceTree = "<group>"; };
-		EE9387B01AADCA1800F5D39E /* LogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWindowController.swift; sourceTree = "<group>"; };
+		EE9387B01AADCA1800F5D39E /* FTSLogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSLogWindowController.swift; sourceTree = "<group>"; };
 		EEA576CC1A97251A00CADCFA /* FTSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTask.swift; sourceTree = "<group>"; };
 		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				EEE043301A80D1130013F040 /* FTSActionMenu.swift */,
 				EE5E6CF71A7B504D004A340E /* FTSProjects.swift */,
 				EEA576CC1A97251A00CADCFA /* FTSTask.swift */,
-				EE9387B01AADCA1800F5D39E /* LogWindowController.swift */,
+				EE9387B01AADCA1800F5D39E /* FTSLogWindowController.swift */,
 				A988E12C1AAF2956004D46C4 /* FTSAboutWindow.swift */,
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
@@ -240,7 +240,7 @@
 				EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */,
 				EE5E6CF81A7B504D004A340E /* FTSProjects.swift in Sources */,
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
-				EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */,
+				EE9387B21AADCA1800F5D39E /* FTSLogWindowController.swift in Sources */,
 				A988E12D1AAF2956004D46C4 /* FTSAboutWindow.swift in Sources */,
 				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,

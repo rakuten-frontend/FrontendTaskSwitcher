@@ -81,8 +81,9 @@ class FTSTask: NSObject {
                 range: text.rangeOfString(text))
             print(text)
             */
-            var text = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print(text)
+            if var text = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                print(text)
+            }
             outPipe.fileHandleForReading.readInBackgroundAndNotify()
         }
     }
