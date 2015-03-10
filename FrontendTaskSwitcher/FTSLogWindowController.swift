@@ -1,5 +1,5 @@
 //
-//  LogWindowController.swift
+//  FTSLogWindowController.swift
 //  FrontendTaskSwitcher
 //
 //  Created by Ogasawara, Tsutomu | Oga | CWDD on 3/9/15.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class LogWindowController: NSWindowController {
+class FTSLogWindowController: NSWindowController {
 
     var logFilePath : String!
 

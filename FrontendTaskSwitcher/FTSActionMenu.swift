@@ -107,7 +107,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     func showLog(sender: AnyObject) {
         if ( self.logWindow == nil ) {
             let logFilePath = self.params["directory"] as! String + "/.log"
-            self.logWindow = LogWindowController(windowNibName: "LogWindow", logFilePath: logFilePath)
+            self.logWindow = FTSLogWindowController(windowNibName: "LogWindow", logFilePath: logFilePath)
             let title = self.params["name"] as! String
             self.logWindow.window?.title = "Log - " + title
             self.logWindow.showWindow(self)
