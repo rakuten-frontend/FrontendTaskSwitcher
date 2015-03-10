@@ -60,6 +60,7 @@ class FTSTasksMenu: NSMenu, NSMenuDelegate {
         return nil
     }
 
+    // TODO: crash here
     private func removeProjects() {
         // remove current menu items
         for item in self.itemArray as! [NSMenuItem] {
