@@ -22,7 +22,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     var logWindow : NSWindowController!
     
     let items = [
-        ["title": "Start (grunt serve)", "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
+        ["title": "Start [grunt serve]", "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
         ["title": "Stop",                "action": "stop:",             "key": "", "tag": MenuItem.Stop.rawValue],
         ["separator": true],
         ["title": "Open with Terminal",  "action": "openWithTerminal:", "key": ""],
