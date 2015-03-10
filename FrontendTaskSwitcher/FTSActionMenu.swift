@@ -57,18 +57,20 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
                 menuItem = NSMenuItem.separatorItem()
             }
             else {
-                menuItem = NSMenuItem(title: item["title"] as String,
-                    action: Selector(item["action"] as String),
-                    keyEquivalent: item["key"] as String)
+                menuItem = NSMenuItem(title: item["title"] as! String,
+                    action: Selector(item["action"] as! String),
+                    keyEquivalent: item["key"] as! String)
                 menuItem.target = self
-                menuItem.tag = item["tag"] as? Int ?? 0
+                if let tag = item["tag"] as? Int {
+                    menuItem.tag = tag
+                }
             }
             self.addItem(menuItem)
         }
     }
     
     func start(sender: AnyObject) {
-        let dir = self.params["directory"] as String
+        let dir = self.params["directory"] as! String
         self.task.start("grunt --no-color serve | tee .log", currentDirectory: dir)
     }
     
@@ -77,12 +79,12 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     }
     
     func openWithTerminal(sender: AnyObject) {
-        let dir = self.params["directory"] as String
+        let dir = self.params["directory"] as! String
         self.task.start("open -a /Applications/Utilities/Terminal.app " + dir + ";")
     }
     
     func openWithFinder(sender: AnyObject) {
-        let dir = self.params["directory"] as String
+        let dir = self.params["directory"] as! String
         self.task.start("open " + dir + ";")
     }
     
@@ -104,9 +106,9 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
     
     func showLog(sender: AnyObject) {
         if ( self.logWindow == nil ) {
-            let logFilePath = self.params["directory"] as String + "/.log"
+            let logFilePath = self.params["directory"] as! String + "/.log"
             self.logWindow = LogWindowController(windowNibName: "LogWindow", logFilePath: logFilePath)
-            let title = self.params["name"] as String
+            let title = self.params["name"] as! String
             self.logWindow.window?.title = "Log - " + title
             self.logWindow.showWindow(self)
         }
@@ -121,7 +123,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
             self.stop(self)
         }
         // remove project
-        let path = self.params["path"] as String
+        let path = self.params["path"] as! String
         FTSProjects.sharedInstance.removeValueForKey(path)
     }
     

@@ -62,7 +62,7 @@ class FTSTasksMenu: NSMenu, NSMenuDelegate {
 
     private func removeProjects() {
         // remove current menu items
-        for item in self.itemArray as [NSMenuItem] {
+        for item in self.itemArray as! [NSMenuItem] {
             if ( item.separatorItem ) {
                 break
             }
@@ -79,7 +79,7 @@ class FTSTasksMenu: NSMenu, NSMenuDelegate {
         if ( FTSProjects.sharedInstance.length > 0 ) {
             // add new menu items
             for (path, item) in FTSProjects.sharedInstance.data {
-                let menuItem = NSMenuItem(title: item["name"] as String, action: nil, keyEquivalent: "")
+                let menuItem = NSMenuItem(title: item["name"] as! String, action: nil, keyEquivalent: "")
                 menuItem.enabled = true
                 menuItem.submenu = FTSActionMenu(params: item)
                 self.insertItem(menuItem, atIndex: 0)
@@ -122,10 +122,10 @@ class FTSTasksMenu: NSMenu, NSMenuDelegate {
         
         // set running indicator
         let items = self.itemArray
-        for item in items as [NSMenuItem] {
+        for item in items as! [NSMenuItem] {
             item.state = NSOffState
             if var submenu = item.submenu as? FTSActionMenu {
-                if let task = submenu.task? {
+                if let task = submenu.task {
                     if ( task.isRunning() ) {
                         item.state = NSOnState
                     }

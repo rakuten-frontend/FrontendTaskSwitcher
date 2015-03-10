@@ -11,7 +11,6 @@
 		EE9387AF1AADC5B100F5D39E /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9387AD1AADC5B100F5D39E /* LogWindow.xib */; };
 		EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9387B01AADCA1800F5D39E /* LogWindowController.swift */; };
 		EEA576CD1A97251A00CADCFA /* FTSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA576CC1A97251A00CADCFA /* FTSTask.swift */; };
-		EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */; };
 		EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137921A79FB6D000864CE /* AppDelegate.swift */; };
 		EED137951A79FB6D000864CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED137941A79FB6D000864CE /* Images.xcassets */; };
 		EED137981A79FB6D000864CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED137961A79FB6D000864CE /* MainMenu.xib */; };
@@ -36,8 +35,6 @@
 		EE9387AE1AADC5B100F5D39E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LogWindow.xib; sourceTree = "<group>"; };
 		EE9387B01AADCA1800F5D39E /* LogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWindowController.swift; sourceTree = "<group>"; };
 		EEA576CC1A97251A00CADCFA /* FTSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTSTask.swift; sourceTree = "<group>"; };
-		EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMR_ANSIEscapeHelper.h; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.h; sourceTree = SOURCE_ROOT; };
-		EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMR_ANSIEscapeHelper.m; path = ANSIEscapeHelper/AMR_ANSIEscapeHelper.m; sourceTree = SOURCE_ROOT; };
 		EED1378D1A79FB6D000864CE /* FrontendTaskSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontendTaskSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED137911A79FB6D000864CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED137921A79FB6D000864CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 				EED137941A79FB6D000864CE /* Images.xcassets */,
 				EED137961A79FB6D000864CE /* MainMenu.xib */,
 				EE9387AD1AADC5B100F5D39E /* LogWindow.xib */,
-				EEAA89561AA96AAC0098FCD0 /* AMR_ANSIEscapeHelper.h */,
-				EEAA89571AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m */,
 				EED137901A79FB6D000864CE /* Supporting Files */,
 			);
 			path = FrontendTaskSwitcher;
@@ -244,7 +239,6 @@
 				EED137931A79FB6D000864CE /* AppDelegate.swift in Sources */,
 				EE9387B21AADCA1800F5D39E /* LogWindowController.swift in Sources */,
 				EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */,
-				EEAA89581AA96AAD0098FCD0 /* AMR_ANSIEscapeHelper.m in Sources */,
 				EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

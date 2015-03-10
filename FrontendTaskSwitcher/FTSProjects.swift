@@ -52,7 +52,7 @@ class FTSProjects: NSObject {
     
     subscript(path: String) -> Dictionary<String, Dictionary<String, String>> {
         get {
-            return self.data[path] as Dictionary<String, Dictionary<String, String>>
+            return self.data[path] as! Dictionary<String, Dictionary<String, String>>
         }
         set(item) {
             self.add(path, project: item)

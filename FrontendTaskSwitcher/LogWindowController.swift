@@ -14,9 +14,9 @@ class LogWindowController: NSWindowController {
 
     @IBOutlet var logTextView: NSTextView!
     
-    convenience init(windowNibName: NSString, logFilePath: NSString) {
+    convenience init(windowNibName: String, logFilePath: NSString) {
         self.init(windowNibName: windowNibName)
-        self.logFilePath = logFilePath
+        self.logFilePath = logFilePath as! String
     }
 
     override func windowDidLoad() {
