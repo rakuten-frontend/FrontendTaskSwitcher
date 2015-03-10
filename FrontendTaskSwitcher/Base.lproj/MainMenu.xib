@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7515.2"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -687,6 +687,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Dfg-C3-n6k"/>
+                <menuItem title="About..." id="V30-hu-SEk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="makeKeyAndOrderFront:" target="9q1-8b-FuY" id="EYM-jC-Eac"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="f4z-5r-HdO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -696,5 +702,52 @@
             </items>
             <point key="canvasLocation" x="-279" y="-864.5"/>
         </menu>
+        <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="9q1-8b-FuY" customClass="FTSAboutWindow" customModule="FrontendTaskSwitcher" customModuleProvider="target">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="131" y="158" width="484" height="136"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="W8Y-ew-BH2">
+                <rect key="frame" x="0.0" y="0.0" width="484" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Qk-dzn">
+                        <rect key="frame" x="127" y="92" width="230" height="24"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Front-end Task Switcher" id="jHM-FJ-yvp">
+                            <font key="font" metaFont="system" size="20"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l85-BL-FIf">
+                        <rect key="frame" x="141" y="20" width="203" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2015 Rakuten, Inc." id="S3T-P2-SJb">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="nj3-qB-Dad">
+                        <rect key="frame" x="48" y="53" width="388" height="29"/>
+                        <buttonCell key="cell" type="bevel" title="https://github.com/rakuten-frontend/FrontendTaskSwitcher" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TI7-Ij-G4e">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pressURL:" target="9q1-8b-FuY" id="6or-Ig-w1h"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="l85-BL-FIf" secondAttribute="centerX" id="AuV-YW-nBr"/>
+                    <constraint firstAttribute="centerY" secondItem="nj3-qB-Dad" secondAttribute="centerY" id="Epn-Xh-k0A"/>
+                    <constraint firstAttribute="bottom" secondItem="l85-BL-FIf" secondAttribute="bottom" constant="20" id="Ilm-eM-cul"/>
+                    <constraint firstAttribute="centerX" secondItem="nj3-qB-Dad" secondAttribute="centerX" id="e1B-wo-7yB"/>
+                    <constraint firstAttribute="centerX" secondItem="g0l-Qk-dzn" secondAttribute="centerX" id="hfF-n7-YGo"/>
+                    <constraint firstItem="g0l-Qk-dzn" firstAttribute="top" secondItem="W8Y-ew-BH2" secondAttribute="top" constant="20" id="lFN-yX-0Iz"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="92" y="-828"/>
+        </window>
     </objects>
 </document>
