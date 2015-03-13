@@ -23,7 +23,14 @@ class FrontendTaskSwitcherTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        
+        let projects = FTSProjects.sharedInstance
+        projects.add("/tmp", project: ["path": "/tmp", "type": "grunt"])
+        XCTAssert(projects.length == 1, "Pass")
+        projects["/abc"] = ["path": "/abc", "type": "grunt"]
+        XCTAssert(projects.length == 2, "Pass")
+        XCTAssert(projects["/tmp"]["path"] as! String == "/tmp" as String, "Pass")
+        XCTAssert(projects["/abc"]["type"] as! String == "grunt", "Pass")
     }
     
     func testPerformanceExample() {

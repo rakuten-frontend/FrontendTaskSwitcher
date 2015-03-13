@@ -50,9 +50,9 @@ class FTSProjects: NSObject {
         return self.data.count
     }
     
-    subscript(path: String) -> Dictionary<String, Dictionary<String, String>> {
+    subscript(path: String) -> [String: AnyObject]! {
         get {
-            return self.data[path] as! Dictionary<String, Dictionary<String, String>>
+            return self.data[path] as [String: AnyObject]!
         }
         set(item) {
             self.add(path, project: item)

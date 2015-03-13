@@ -18,6 +18,7 @@
 		EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137A31A79FB6D000864CE /* FrontendTaskSwitcherTests.swift */; };
 		EED137B71A7A0B09000864CE /* FTSTasksMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED137B61A7A0B09000864CE /* FTSTasksMenu.swift */; };
 		EEE043311A80D1130013F040 /* FTSActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE043301A80D1130013F040 /* FTSActionMenu.swift */; };
+		EEE7DF971AB2F20B004E49EF /* FTSProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E6CF71A7B504D004A340E /* FTSProjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EED137A41A79FB6D000864CE /* FrontendTaskSwitcherTests.swift in Sources */,
+				EEE7DF971AB2F20B004E49EF /* FTSProjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
