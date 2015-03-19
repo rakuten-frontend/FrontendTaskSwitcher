@@ -36,8 +36,11 @@ class FTSLogWindowController: NSWindowController {
     }
 
     func appendText(text: String) {
+        let font = NSFont(name: "Monaco", size: 12.0)!
+        let attributedString = NSAttributedString(string: text, attributes: [
+            NSFontAttributeName: font
+            ])
         self.logTextView.textStorage?.beginEditing()
-        let attributedString = NSAttributedString(string: text)
         self.logTextView.textStorage?.appendAttributedString(attributedString)
         self.logTextView.textStorage?.endEditing()
         self.logTextView.autoscroll(NSEvent())
