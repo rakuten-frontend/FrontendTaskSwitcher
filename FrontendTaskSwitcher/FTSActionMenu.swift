@@ -15,11 +15,11 @@ enum MenuItem : Int {
     case Remove
 }
 
-class FTSActionMenu: NSMenu, NSMenuDelegate {
+class FTSActionMenu: NSMenu, NSMenuDelegate, FTSTaskDelegate {
 
     var params : [String : AnyObject]!
     var task : FTSTask!
-    var logWindow : NSWindowController!
+    var logWindow : FTSLogWindowController!
     
     let items = [
         ["title": "Start [grunt serve]", "action": "start:",            "key": "", "tag": MenuItem.Start.rawValue],
@@ -47,7 +47,7 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
         self.params = params
         self.autoenablesItems = false
         self.initMenuItems()
-        self.task = FTSTask()
+        self.task = FTSTask(delegate: self)
     }
     
     private func initMenuItems() {
@@ -139,6 +139,13 @@ class FTSActionMenu: NSMenu, NSMenuDelegate {
             menu.itemWithTag(MenuItem.Start.rawValue)?.hidden = false
             menu.itemWithTag(MenuItem.Stop.rawValue)?.hidden = true
             menu.itemWithTag(MenuItem.Remove.rawValue)?.enabled = true
+        }
+    }
+    
+    // MARK: FTSTask Delegate
+    func readCompleted(output: String) {
+        if self.logWindow != nil {
+            self.logWindow.appendText(output)
         }
     }
 }

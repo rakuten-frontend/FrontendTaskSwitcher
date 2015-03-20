@@ -8,12 +8,23 @@
 
 import Cocoa
 
+protocol FTSTaskDelegate {
+    func readCompleted(output: String)
+}
+
 class FTSTask: NSObject {
     
     private var _task : NSTask!
     
     var outPipe   : NSPipe!
     var errorPipe : NSPipe!
+    
+    var delegate : FTSTaskDelegate!
+    
+    convenience init(delegate: FTSTaskDelegate!) {
+        self.init()
+        self.delegate = delegate
+    }
     
     deinit {
         if ( self.isRunning() ) {
@@ -69,6 +80,11 @@ class FTSTask: NSObject {
     }
     
     func readCompleted(notification: NSNotification) {
+        
+        if notification.object! !== self._task.standardOutput.fileHandleForReading {
+            return
+        }
+        
         let data: NSData? = notification.userInfo?[NSFileHandleNotificationDataItem] as? NSData
         if data?.length > 0 {
             /*
@@ -83,6 +99,9 @@ class FTSTask: NSObject {
             */
             if var text = NSString(data: data!, encoding: NSUTF8StringEncoding) {
                 print(text)
+                if self.delegate != nil {
+                    self.delegate.readCompleted(String(text))
+                }
             }
             outPipe.fileHandleForReading.readInBackgroundAndNotify()
         }
